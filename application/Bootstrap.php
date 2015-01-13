@@ -2,8 +2,6 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
-
-    protected $layout;
     
     /**
      * View of our layout template.
@@ -33,8 +31,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     
         // Bootstrap the layout
         $this->bootstrap('layout');
-        $this->layout = $this->getResource('layout');
-        $this->view = $this->layout->getView();
+        $layout = $this->getResource('layout');
+        $this->view = $layout->getView();
     
         // Set a starting title
         $this->view->headTitle('Zend 1 App');
