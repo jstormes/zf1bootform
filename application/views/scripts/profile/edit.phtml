@@ -1,1 +1,73 @@
-<?php
+<style>
+
+    .btn-file {
+    position: relative;
+    overflow: hidden;
+    }
+    .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+    }
+    
+</style>
+
+<div class="container">
+    <h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          
+<!--           <input class="form-control" type="file"> -->
+          <!--  move upload alerts here -->
+          <?php //echo $this->InlineUpload('profile_pic','','Profile Picture Upload','center-block'); ?>
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-7">
+        <?php //foreach($this->alerts as $alert) echo $this->AlertDismissible($alert);?>
+        <?php //echo $this->AlertDismissible(new Bootstrap_Alert("This is an <strong>.alert</strong>. Use this to show important messages to the user."));?>
+        
+        <h3>Personal info</h3>
+        
+        <form class="form-horizontal" role="form" method="post" action="">
+            <?php //foreach ($this->columns as $column) {
+                //echo $this->HorizontalControl($column,$this->row);
+            //}?>
+            
+            <?php echo $this->HorizontalText('first_name','','First Name'); ?>
+            <?php echo $this->HorizontalText('last_name','','Last Name'); ?>
+            <?php echo $this->HorizontalText('company','','Company'); ?>
+            <?php echo $this->HorizontalEmail('email',''); ?>
+            <?php echo $this->HorizontalDate('birthdate',''); ?>
+            <?php echo $this->HorizontalDate('startdate','','Start Date'); ?>
+            <?php echo $this->HorizontalText('cell_phone','','Cell Phone',array('data-format'=>'({{999}}) {{999}}-{{9999}} EX {{9999}}')); ?>
+            <?php echo $this->HorizontalTel('office_phone','','Office Phone'); ?>
+            <?php echo $this->HorizontalText('timezone','','Time Zone'); ?>
+            <?php echo $this->HorizontalFile('file','','file'); ?>
+            <?php echo $this->HorizontalDateTime('dt','','dt'); ?>
+            <?php echo $this->HorizontalTinyMCE('ta','','Tell ua about you'); ?>
+            <?php echo $this->HorizontalPassword('password',''); ?>
+            <?php echo $this->HorizontalPassword('verify','','Confirm password'); ?>
+            <?php echo $this->HorizontalSaveCancel(); ?>
+        </form>
+        
+      </div>
+  </div>
+  <hr>
+</div>
